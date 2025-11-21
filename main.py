@@ -1,24 +1,28 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from textblob import TextBlob
+import joblib
+
+try : 
+    model = joblib.load("sentiment_model.pkl")
+    print("Modèle chargé")
+except FileNotFoundError :
+    print("Modèle introuvable")
+    model = None
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-class SentimentRequest(BaseModel):
+class sentimentRequest(BaseModel):
     text : str
 
+@app.get("/")
+def read_root():
+    return {"Message": "Sentiment Analysis API"}
+
 @app.post("/predict/")
-def predict_sentiment(item: SentimentRequest):
-    analysis = TextBlob(item.text)
-    sentiment = analysis.sentiment.polarity
-    if sentiment > 0:
-        sentiment_label = "positive"
-    elif sentiment < 0:
-        sentiment_label = "negative"
-    else:
-        sentiment_label = "neutral"
-    return {"text": item.text, "sentiment": sentiment_label, "polarity": sentiment}
+def predict_sentiment(request: sentimentRequest):
+    if model is None:
+        return {"erreur": "Aucun modèle disponible"}
+    prediction = model.predict([request.text])
+    sentiment_label = prediction[0]
+
+    return {"text": request.text, "sentiment": sentiment_label, "model_type": "Logistic Regression v1"}

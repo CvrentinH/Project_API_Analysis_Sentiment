@@ -1,0 +1,18 @@
+text,sentiment
+I love this product it is amazing,positive
+This is the best day of my life,positive
+I am so happy and joyful,positive
+Kubernetes is fantastic tools,positive
+Python is a great language,positive
+I hate this it is terrible,negative
+This is the worst experience ever,negative
+I am sad and depressed,negative
+My computer is broken and slow,negative
+The service was awful and rude,negative
+This is okay nothing special,neutral
+The weather is average today,neutral
+I am going to work,neutral
+The car is red,neutral
+I really like the new feature,positive
+The support team is useless,negative
+It is just a normal day,neutral

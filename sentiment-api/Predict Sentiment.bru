@@ -1,0 +1,22 @@
+meta {
+  name: Predict Sentiment
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://192.168.49.2:31234/predict
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "text": "I am amazed by how powerful Kubernetes is!"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
