@@ -51,4 +51,4 @@ print(f"Accuracy : {accuracy:.2f} (Signifiant {accuracy*100:.0f}% prédiciton co
 
 model_filename = "sentiment_model.pkl"
 joblib.dump(pipeline, model_filename)
-print(f"Modele sauvegardé à {model_filename}")
+print(f"Modele sauvegardé sous le nom {model_filename}")

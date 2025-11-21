@@ -1,4 +1,4 @@
-# 🚀 MLOps Sentiment Analysis API
+# API d'Analyse de Sentiments
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -7,42 +7,38 @@
 ![Terraform](https://img.shields.io/badge/Terraform-1.5-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-## 📋 Overview
+## Résumé
 
-This project demonstrates a complete **End-to-End MLOps pipeline**.
-It goes beyond simple modeling by implementing a production-ready architecture:
+Ce projet présente une API d'analyse de sentiment (texte)
+Il dépasse la simple modélisation théorique en implémentant une architecture logicielle prête pour la production :
 
-1.  **Machine Learning**: Training a Logistic Regression model on a custom dataset (`pandas`, `scikit-learn`) and serializing it (`joblib`).
-2.  **API Development**: Serving the model via a high-performance REST API (`FastAPI`).
-3.  **Containerization**: Packaging the application for reproducibility (`Docker`).
-4.  **Infrastructure as Code**: Automating the deployment on a local Kubernetes cluster (`Terraform`).
-5.  **Testing**: Automated API testing (`Bruno`).
+1.  **Machine Learning** : Entraînement d'un modèle de Régression Logistique sur un dataset personnalisé (`pandas`, `scikit-learn`) et sérialisation (`joblib`).
+2.  **Développement API** : Exposition du modèle via (`FastAPI`).
+3.  **Conteneurisation** : Dockerisation de l'application pour garantir la reproductibilité (`Docker`).
+4.  **Infrastructure as Code (IaC)** : Automatisation du déploiement sur un cluster Kubernetes local (`Terraform`).
+5.  **Tests** : Tests d'API automatisés utilisant (`Bruno`).
 
----
 
-## 🏗️ Architecture
+## Architecture
 
-The project follows a decoupling strategy between Training and Inference:
+* **Phase d'Entraînement (Training) :** Le script `train_model.py` utilise le fichier `dataset.csv`, pré-traite le texte (TF-IDF), entraînant le modèle et sauvegarde le fichier (`sentiment_model.pkl`).
+* **Phase d'Inférence (Serving) :** L'API charge le fichier `.pkl` au démarrage pour utiliser les prédictions instantanément sans ré-entraînement.
 
-* **Training Phase:** `train_model.py` consumes `dataset.csv`, preprocesses text (TF-IDF), trains the model, and saves the artifact (`sentiment_model.pkl`).
-* **Inference Phase:** The API loads the `.pkl` artifact at startup to serve predictions efficiently.
 
----
+## Comment lancer le projet
 
-## ⚙️ How to Run Locally
-
-### Prerequisites
+### Prérequis
 * Python 3.11+
 * Docker Desktop / Minikube
 * Terraform
 * Git
 
-### 1. Model Training
-First, generate the model artifact from the raw data.
+### Entraînement du Modèle
+Générer l'artifact du modèle à partir des données brutes.
 
 ```bash
-# Install dependencies
+# Installer les dépendances
 pip install -r requirements.txt
 
-# Train the model (creates sentiment_model.pkl)
+# Lancer l'entraînement (crée sentiment_model.pkl)
 python train_model.py
