@@ -16,6 +16,7 @@ try :
     print(f"Data chargé {len(df)} lignes")
 except FileNotFoundError :
     print("Erreur fichier introuvable")
+    exit()
 
 #Définition features
 
@@ -47,7 +48,7 @@ Y_pred = pipeline.predict(X_test)
 accuracy = accuracy_score(Y_test, Y_pred)
 print(f"Accuracy : {accuracy:.2f} (Signifiant {accuracy*100:.0f}% prédiciton correctes sur des données non vues)")
 
-# Export
+#Export
 
 model_filename = "sentiment_model.pkl"
 joblib.dump(pipeline, model_filename)

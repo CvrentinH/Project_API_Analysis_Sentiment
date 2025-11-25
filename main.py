@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
+import numpy as np
 
 try : 
     model = joblib.load("sentiment_model.pkl")
@@ -24,5 +25,9 @@ def predict_sentiment(request: sentimentRequest):
         return {"erreur": "Aucun modèle disponible"}
     prediction = model.predict([request.text])
     sentiment_label = prediction[0]
+    probabilities = model.predict_proba([request.text])
+    confidence_score = np.max(probabilities)
 
-    return {"text": request.text, "sentiment": sentiment_label, "model_type": "Logistic Regression v1"}
+    return {
+            "text": request.text,"sentiment": sentiment_label,"confidence": round(confidence_score, 2), "model_type": "Logistic Regression v1"
+            }  
