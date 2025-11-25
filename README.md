@@ -9,6 +9,8 @@
 
 ## Résumé
 
+Installer docker installer minikube (Dans requirements ajt makefile)
+
 Ce projet présente une API complète d'analyse de sentiment.
 Il implémente une **architecture MLOps** prête pour la production :
 
@@ -49,10 +51,21 @@ Comme le dataset d'entraînement est réduit, le modèle fonctionne par associat
 ## Comment lancer le projet
 
 ### Prérequis
+
 * Python 3.11+
 * Docker Desktop / Minikube
 * Terraform
 * Git
+* Make
+
+### Option 1 : Démarrage rapide (Via Makefile)
+L'ensemble du pipeline (Installation, Entraînement, Build Docker, Minikube, Terraform) est automatisé.
+
+```bash
+make first-run
+```
+
+### Option 2 : Démarrage rapide (Via Makefile)
 
 ### 1. Entraînement du Modèle
 Générer l'artefact (`.pkl`) à partir des données brutes.
@@ -71,8 +84,8 @@ Packager l'API
 ```bash
 docker build -t sentiment-api .
 
-# (Si utilisation de Minikube comme moi) Charger l'image dans le cluster
-minikube image load sentiment-api
+# (Si utilisation de Minikube) Charger l'image dans le cluster
+minikube image load sentiment-api:latest
 ```
 
 ### 3. Déploiement (IaC)
