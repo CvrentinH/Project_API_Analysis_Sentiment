@@ -39,12 +39,12 @@ Le graphique ci-dessous montre les mots qui influencent le plus la décision ver
 ![Explicabilité du modèle](feature_importance.png)
 
 ### Pourquoi des mots neutres semblent "polarisés" ?
-On remarque que des mots techniques à priori neutres (comme `python`, `kubernetes` ou `service`) apparaissent fortement colorés.
+On remarque que certains mots à priori neutres apparaissent fortement colorés.
 
 Cela s'explique par le **biais du jeu de données (Dataset Bias)** :
 Comme le dataset d'entraînement est réduit, le modèle fonctionne par association directe.
-* Si le mot `python` apparaît souvent dans une phrase contenant `amazing`, le modèle va déduire que `python` est un mot positif en soi.
-* Inversement, si `service` apparaît souvent à côté de `awful`, il sera considéré comme négatif.
+* Si un mot neutre apparaît souvent dans une phrase contenant `amazing`, le modèle va déduire que le mot associé est un mot positif en soi.
+* Et à l'inverse si un mot neutre apparaît souvent à côté de `awful`, il sera considéré comme négatif.
 
 ---
 
@@ -98,12 +98,39 @@ terraform apply
 ```
 
 ### 4. Accès à l'API
-Récupérer l'URL du service :
+Une fois l'infrastructure déployée, voici 3 façons de tester l'API :
 
+#### Option A : Interface Visuelle
+Récupérez l'URL du service :
 ```bash
 minikube service sentiment-api-service --url
 ```
-Ajoutez /docs à l'URL pour tester via Swagger UI.
+
+Ouvrez cette URL dans votre navigateur en ajoutant /docs à la fin. 
+Vous pourrez tester les endpoints directement via l'interface Swagger UI.
+
+#### Option B : Tests Automatisés (Bruno)
+Le projet contient une collection de tests API prête à l'emploi.
+
+    Ouvrez l'application Bruno.
+
+    Cliquez sur Open Collection.
+
+    Sélectionnez le dossier sentiment api situé à la racine de ce projet.
+
+    Lancez la requête Predict Sentiment (N'oubliez pas de mettre à jour l'URL avec celle de votre Minikube).
+
+### Option C : Terminal (CURL)
+Vous pouvez tester directement depuis votre terminal :
+
+```bash
+curl -X 'POST' \
+  'http://URL_MINIKUBE:PORT/predict' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "The deployment pipeline is robust and efficient."
+}'
+```
 
 ## Structure du Projet
 
