@@ -112,13 +112,10 @@ Vous pourrez tester les endpoints directement via l'interface Swagger UI.
 #### Option B : Tests Automatisés (Bruno)
 Le projet contient une collection de tests API prête à l'emploi.
 
-    Ouvrez l'application Bruno.
-
-    Cliquez sur Open Collection.
-
-    Sélectionnez le dossier sentiment api situé à la racine de ce projet.
-
-    Lancez la requête Predict Sentiment (N'oubliez pas de mettre à jour l'URL avec celle de votre Minikube).
+Ouvrez l'application Bruno.
+Cliquez sur Open Collection.
+Sélectionnez le dossier sentiment api situé à la racine de ce projet.
+Lancez la requête Predict Sentiment (N'oubliez pas de mettre à jour l'URL avec celle de votre Minikube).
 
 ### Option C : Terminal (CURL)
 Vous pouvez tester directement depuis votre terminal :
