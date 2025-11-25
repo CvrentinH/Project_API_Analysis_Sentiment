@@ -8,9 +8,6 @@
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
 ## Résumé
-
-Installer docker installer minikube (Dans requirements ajt makefile)
-
 Ce projet présente une API complète d'analyse de sentiment.
 Il implémente une **architecture MLOps** prête pour la production :
 
