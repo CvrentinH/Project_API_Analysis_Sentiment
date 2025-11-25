@@ -1,18 +1,306 @@
 text,sentiment
-I love this product it is amazing,positive
-This is the best day of my life,positive
-I am so happy and joyful,positive
-Kubernetes is fantastic tools,positive
-Python is a great language,positive
-I hate this it is terrible,negative
-This is the worst experience ever,negative
-I am sad and depressed,negative
-My computer is broken and slow,negative
-The service was awful and rude,negative
-This is okay nothing special,neutral
-The weather is average today,neutral
-I am going to work,neutral
-The car is red,neutral
-I really like the new feature,positive
-The support team is useless,negative
-It is just a normal day,neutral
+This product exceeded my expectations.,positive
+The interface is smooth and enjoyable.,positive
+I love how efficient this tool is.,positive
+Fantastic service from start to finish.,positive
+The support team was incredibly helpful.,positive
+This update improved everything.,positive
+The design is beautiful and intuitive.,positive
+I 'm extremely satisfied with the quality.,positive
+The experience was delightful.,positive
+This app works flawlessly.,positive
+The results are outstanding.,positive
+I adore using this interface.,positive
+My experience was wonderful.,positive
+Everything is running perfectly.,positive
+The product is amazing for its price.,positive
+The team handled my request perfectly.,positive
+The user experience is top notch.,positive
+I feel very happy with this purchase.,positive
+Excellent performance overall.,positive
+The service truly impressed me.,positive
+I highly recommend this tool.,positive
+The interface is extremely polished.,positive
+The product is reliable and fast.,positive
+I 'm thrilled with the support.,positive
+Amazing features and great usability.,positive
+This tool is a game changer.,positive
+The product works exactly as promised.,positive
+I love the clean and modern layout.,positive
+Everything feels smooth and responsive.,positive
+A brilliant experience overall.,positive
+The service was better than expected.,positive
+I 'm very pleased with the outcome.,positive
+The device feels premium and solid.,positive
+This is easily one of the best tools.,positive
+I 'm impressed by the consistent performance.,positive
+The UI feels elegant and flawless.,positive
+Top-notch experience all around.,positive
+I 'm grateful for the quick assistance.,positive
+Excellent job from the development team.,positive
+The app responds instantly and smoothly.,positive
+I feel very satisfied with the interface.,positive
+Perfect execution nothing to complain about.,positive
+The support team resolved my issue quickly.,positive
+Everything just works perfectly.,positive
+One of the best experiences I 've had.,positive
+The design choices are excellent.,positive
+I 'm extremely happy with how this turned out.,positive
+Superb quality and great usability.,positive
+The interface feels delightful.,positive
+I truly appreciate the attention to detail.,positive
+This is a very impressive product.,positive
+The service exceeded all expectations.,positive
+The software feels stable and fast.,positive
+I 'm very happy with my experience.,positive
+The update brought amazing improvements.,positive
+Fantastic customer service!,positive
+The product 's performance is brilliant.,positive
+The app is extremely well-built.,positive
+My workflow improved dramatically.,positive
+I love the clarity of the interface.,positive
+The service works perfectly.,positive
+The hardware feels high quality.,positive
+This app is incredibly helpful.,positive
+I 'm thrilled with the results.,positive
+Absolutely great from start to finish.,positive
+The service is outstanding.,positive
+Everything feels polished and solid.,positive
+The final result is excellent.,positive
+This product made my day.,positive
+I 'm beyond satisfied.,positive
+The interface is stunning.,positive
+Fantastic responsiveness.,positive
+It works flawlessly every time.,positive
+The user experience is delightful.,positive
+The workflow is super intuitive.,positive
+I 'm impressed by the simplicity.,positive
+Wonderful support from the team.,positive
+The app feels incredibly reliable.,positive
+Amazing responsiveness throughout.,positive
+This product saved me a ton of time.,positive
+Everything exceeded expectations.,positive
+Superb interface and design.,positive
+I absolutely love this system.,positive
+Great job from the development team.,positive
+Smoothest experience I 've had.,positive
+Everything works beautifully.,positive
+I love how fast it is.,positive
+The performance is remarkable.,positive
+This product is extremely useful.,positive
+Brilliant responsiveness and stability.,positive
+This is a top-tier service.,positive
+Perfect interface and great usability.,positive
+The experience was flawless.,positive
+I genuinely enjoyed using this.,positive
+The support was exceptional.,positive
+Everything functions amazingly.,positive
+The product feels polished.,positive
+I'm extremely pleased with the results.,positive
+The app works exactly as needed.,positive
+Truly fantastic performance.,positive
+This made my experience so much easier.,positive
+
+The product is terrible and frustrating.,negative
+The interface is broken and useless.,negative
+I hate how slow everything is.,negative
+The app keeps crashing nonstop.,negative
+This was a complete waste of time.,negative
+The support team ignored me.,negative
+Terrible experience overall.,negative
+The device feels cheap and weak.,negative
+I regret buying this completely.,negative
+Nothing works as expected.,negative
+This is one of the worst tools ever.,negative
+The product failed instantly.,negative
+The interface is confusing and messy.,negative
+Horrible service from the team.,negative
+The system is painfully slow.,negative
+The app is a nightmare to use.,negative
+The performance is awful.,negative
+Everything is broken and disappointing.,negative
+The experience was extremely frustrating.,negative
+This tool made everything worse.,negative
+Customer service was rude.,negative
+The update ruined everything.,negative
+The UI feels outdated and clunky.,negative
+I am angry and disappointed.,negative
+The product is garbage.,negative
+This software is unstable.,negative
+Everything lags constantly.,negative
+The support was unhelpful.,negative
+The user experience is terrible.,negative
+The system completely failed.,negative
+I hate using this platform.,negative
+The service is absolutely awful.,negative
+This is the worst purchase ever.,negative
+The features barely work.,negative
+The interface is slow and broken.,negative
+Nothing functions correctly.,negative
+Awful quality overall.,negative
+I 'm extremely dissatisfied.,negative
+The team never responded.,negative
+This tool is pointless.,negative
+The product is unusable.,negative
+The workflow is a disaster.,negative
+Everything is incredibly buggy.,negative
+The experience was horrible.,negative
+The app behaves terribly.,negative
+The interface failed completely.,negative
+The system feels unreliable.,negative
+The performance is disappointing.,negative
+The product constantly breaks.,negative
+The service sucks.,negative
+I hate everything about this.,negative
+The app is trash.,negative
+The UI is awful.,negative
+The software keeps freezing.,negative
+The experience was miserable.,negative
+The device works terribly.,negative
+I can't stand how buggy it is.,negative
+This ruined my workflow.,negative
+The support team made things worse.,negative
+The app never loads properly.,negative
+The whole system is flawed.,negative
+The interface is terrible.,negative
+The product repeatedly fails.,negative
+The customer service is awful.,negative
+I feel cheated by this purchase.,negative
+Terrible functionality overall.,negative
+Nothing but issues with this.,negative
+The performance is horrible.,negative
+This was a complete failure.,negative
+The tool is unreliable.,negative
+It lags every single time.,negative
+The system keeps breaking.,negative
+The experience is a disaster.,negative
+The product didn't work at all.,negative
+The support made no effort.,negative
+Everything feels broken.,negative
+The update caused even more bugs.,negative
+The UI feels messy and chaotic.,negative
+The tool constantly freezes.,negative
+The experience was awful.,negative
+The product is not usable.,negative
+The interface is sloppy.,negative
+The service is disappointing.,negative
+Nothing ever loads.,negative
+The device is unreliable.,negative
+It fails every time I use it.,negative
+The system is garbage.,negative
+The tool is terrible.,negative
+I hate the experience.,negative
+The app ruined my day.,negative
+Everything feels poorly designed.,negative
+The performance is pathetic.,negative
+This caused multiple issues.,negative
+The product is extremely disappointing.,negative
+I'm furious with the system.,negative
+I don't like using this at all.,negative
+I'm not satisfied with this.,negative
+This product is mediocre.,negative
+My experience was a disaster., negative
+One of my least favorite tools.,negative
+The interface is subpar.,negative
+
+Nothing special happened today.,neutral
+The interface is okay.,neutral
+The service feels standard.,neutral
+The experience was average.,neutral
+The results were neither good nor bad.,neutral
+Everything seems normal.,neutral
+The design is acceptable.,neutral
+The product works fine.,neutral
+The interface is usable.,neutral
+The performance is ordinary.,neutral
+My workflow stayed the same.,neutral
+The service is functional.,neutral
+The update changed nothing.,neutral
+The UI feels normal.,neutral
+Everything behaves as expected.,neutral
+The product is serviceable.,neutral
+My experience was typical.,neutral
+The system is average.,neutral
+It performs adequately.,neutral
+The app functions normally.,neutral
+Nothing extraordinary to report.,neutral
+The tool works as intended.,neutral
+The design is neither good nor bad.,neutral
+Everything feels standard.,neutral
+The device operates normally.,neutral
+The interface is plain.,neutral
+The experience is moderate.,neutral
+The performance is acceptable.,neutral
+The product is okay.,neutral
+The service is unremarkable.,neutral
+My experience felt ordinary.,neutral
+The UI is decent.,neutral
+Everything is fine.,neutral
+The app seems normal.,neutral
+The results feel standard.,neutral
+Nothing out of the ordinary.,neutral
+The tool is fine.,neutral
+The system operates as usual.,neutral
+The workflow feels regular.,neutral
+The product behaves normally.,neutral
+The app is standard.,neutral
+The interface is basic.,neutral
+The service is ordinary.,neutral
+The result is fine.,neutral
+Everything is neither good nor bad.,neutral
+The software feels average.,neutral
+The device is standard.,neutral
+The performance feels regular.,neutral
+Nothing unusual happened.,neutral
+Everything works as usual.,neutral
+The UI is acceptable.,neutral
+The experience is okay.,neutral
+The interface seems average.,neutral
+The product works as expected.,neutral
+The system is typical.,neutral
+The app runs as usual.,neutral
+The workflow is acceptable.,neutral
+The service is okay.,neutral
+The device behaves fine.,neutral
+Everything is fairly normal.,neutral
+The results were predictable.,neutral
+The interface feels ordinary.,neutral
+Everything stayed the same.,neutral
+The user experience is average.,neutral
+The system feels standard.,neutral
+The product is neither good nor bad.,neutral
+The behavior is normal.,neutral
+The interface feels standard.,neutral
+The service felt okay.,neutral
+Everything worked normally.,neutral
+The performance was typical.,neutral
+The outcome is standard.,neutral
+The device is okay.,neutral
+The UI is standard.,neutral
+The workflow feels typical.,neutral
+The performance feels fine.,neutral
+Nothing new to mention.,neutral
+The tool behaves normally.,neutral
+The interface looks normal.,neutral
+The experience is neutral.,neutral
+The system reacts as usual.,neutral
+The device works as intended.,neutral
+The results are okay.,neutral
+Everything feels standard so far.,neutral
+The product behaves as expected.,neutral
+The app functions as intended.,neutral
+The service looked normal.,neutral
+The outcome is moderate.,neutral
+Everything seemed average.,neutral
+The interface is fine.,neutral
+The product is functional.,neutral
+The system performs normally.,neutral
+Nothing extraordinary happened.,neutral
+The service worked as expected.,neutral
+The workflow is fine.,neutral
+The UI behaved as usual.,neutral
+Everything is perfectly average.,neutral
+The experience felt standard.,neutral
+The app is functional.,neutral
+The interface operates normally.,neutral
+The product is neither great nor terrible.,neutral

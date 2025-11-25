@@ -13,6 +13,8 @@ print("Chargement des données")
 try : 
     df = pd.read_csv("dataset.csv")
     df = df.dropna()
+    df['text'] = df['text'].str.strip()
+    df['sentiment'] = df['sentiment'].str.strip()
     print(f"Data chargé {len(df)} lignes")
 except FileNotFoundError :
     print("Erreur fichier introuvable")
