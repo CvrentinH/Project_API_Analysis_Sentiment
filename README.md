@@ -39,12 +39,12 @@ Le graphique ci-dessous montre les mots qui influencent le plus la décision ver
 ![Explicabilité du modèle](feature_importance.png)
 
 ### Pourquoi des mots neutres semblent "polarisés" ?
-On remarque que des mots techniques à priori neutres (comme `python`, `kubernetes` ou `service`) apparaissent fortement colorés.
+On remarque que certains mots à priori neutres apparaissent fortement colorés.
 
 Cela s'explique par le **biais du jeu de données (Dataset Bias)** :
 Comme le dataset d'entraînement est réduit, le modèle fonctionne par association directe.
-* Si le mot `python` apparaît souvent dans une phrase contenant `amazing`, le modèle va déduire que `python` est un mot positif en soi.
-* Inversement, si `service` apparaît souvent à côté de `awful`, il sera considéré comme négatif.
+* Si un mot neutre apparaît souvent dans une phrase contenant `amazing`, le modèle va déduire que le mot associé est un mot positif en soi.
+* Et à l'inverse si un mot neutre apparaît souvent à côté de `awful`, il sera considéré comme négatif.
 
 ---
 
