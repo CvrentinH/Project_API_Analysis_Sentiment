@@ -82,7 +82,7 @@ python train_model.py
 Packager l'API
 
 ```bash
-docker build -t sentiment-api .
+docker build -t sentiment-api:latest .
 
 # (Si utilisation de Minikube) Charger l'image dans le cluster
 minikube image load sentiment-api:latest
@@ -94,7 +94,7 @@ Déployer l'infrastructure sur Kubernetes via Terraform.
 ```bash
 cd terraform
 terraform init
-terraform apply
+terraform apply -auto-approve
 ```
 
 ### 4. Accès à l'API
