@@ -1,4 +1,4 @@
-# API d'Analyse de Sentiments MLOps
+# MLOps Sentiment Analysis API
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -7,47 +7,46 @@
 ![Terraform](https://img.shields.io/badge/Terraform-1.5-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-## Résumé
-Ce projet présente une API complète d'analyse de sentiment.
-Il implémente une **architecture MLOps** prête pour la production :
+## Overview
+This project presents a complete sentiment analysis API. 
+It implements a **production-ready** MLOps architecture:
 
-1.  **Machine Learning** : Entraînement d'un modèle de Régression Logistique sur un dataset personnalisé (`pandas`, `scikit-learn`) et sérialisation (`joblib`).
-2.  **Développement API** : Exposition du modèle via (`FastAPI`).
-3.  **Conteneurisation** : Dockerisation de l'application pour garantir la reproductibilité (`Docker`).
-4.  **Infrastructure as Code (IaC)** : Automatisation du déploiement sur un cluster Kubernetes local (`Terraform`).
-5.  **Tests** : Tests d'API automatisés (`Bruno`).
+1.  **Machine Learning** : Training a Logistic Regression model on a custom dataset (`pandas`, `scikit-learn`) and serialization (`joblib`).
+2.  **API Développement** : Exposing the model via (`FastAPI`).
+3.  **Dockerization** : Dockerizing the application to ensure reproducibility (`Docker`).
+4.  **Infrastructure as Code (IaC)** : Automating deployment on a local Kubernetes cluster (`Terraform`).
+5.  **Tests** : Automated API testing (`Bruno`).
 
 ---
 
 ## Architecture
 
-Le projet suit une séparation entre l'entraînement et l'utilisation :
+The project follows a strict separation between training and usage:
 
-* **Phase d'Entraînement (Training) :** Le script `train_model.py` utilise le fichier `dataset.csv`, pré-traite le texte (vectorisation TF-IDF), entraîne le modèle et sauvegarde le cerveau dans un fichier binaire (`sentiment_model.pkl`).
-* **Phase d'Inférence (Serving) :** L'API charge ce fichier `.pkl` au démarrage pour servir des prédictions instantanées sans avoir besoin de ré-entraîner le modèle.
+* **Training phase :** The script `train_model.py` use the file `dataset.csv`, re-processes the text (TF-IDF vectorization), trains the model, and saves the logic into a binary file (`sentiment_model.pkl`).
+* **Inference Phase (Serving) :** The API loads this `.pkl` file at startup to serve instant predictions without needing to retrain the model.
 
 ---
 
-## Visualisation & Interprétation du Modèle (Et sa limite)
+## Model Visualization & Interpretation (And Limitations)
 
-Pour comprendre comment le modèle prend ses décisions, nous avons extrait les coefficients de la Régression Logistique.
-Le graphique ci-dessous montre les mots qui influencent le plus la décision vers "Positif" (Vert) ou "Négatif" (Rouge).
+To understand how the model makes decisions, we extracted the coefficients from the Logistic Regression. The chart below shows the words that most influence the decision toward "Positive" (Green) or "Negative" (Red).
 
 ![Explicabilité du modèle](feature_importance.png)
 
-### Pourquoi des mots neutres semblent "polarisés" ?
-On remarque que certains mots à priori neutres apparaissent fortement colorés.
+### Why do neutral words seem "polarized"?
+You may notice that some seemingly neutral words appear strongly colored.
 
-Cela s'explique par le **biais du jeu de données (Dataset Bias)** :
-Comme le dataset d'entraînement est réduit, le modèle fonctionne par association directe.
-* Si un mot neutre apparaît souvent dans une phrase contenant `amazing`, le modèle va déduire que le mot associé est un mot positif en soi.
-* Et à l'inverse si un mot neutre apparaît souvent à côté de `awful`, il sera considéré comme négatif.
+This is explained by **Dataset Bias**: Since the training dataset is small, the model works by direct association.
+
+* If a neutral word often appears in a sentence containing `amazing`, the model will deduce that the associated word is positive in itself.
+* Conversely, if a neutral word frequently appears next to `awful`, it will be considered negative.
 
 ---
 
-## Comment lancer le projet
+## How to Run the Project
 
-### Prérequis
+### Prerequisites
 
 * Python 3.11+
 * Docker Desktop / Minikube
@@ -55,38 +54,38 @@ Comme le dataset d'entraînement est réduit, le modèle fonctionne par associat
 * Git
 * Make
 
-### Option 1 : Démarrage rapide (Via Makefile)
-L'ensemble du pipeline (Installation, Entraînement, Build Docker, Minikube, Terraform) est automatisé.
+### Option 1: Quick Start (Via Makefile)
+The entire pipeline (Installation, Training, Docker Build, Minikube, Terraform) is automated.
 
 ```bash
 make first-run
 ```
 
-### Option 2 : Démarrage rapide (Via Makefile)
+### Option 2: Manual Setup
 
-### 1. Entraînement du Modèle
-Générer l'artefact (`.pkl`) à partir des données brutes.
+### 1. Model Training
+Generate the artifact (`.pkl`) from raw datas.
 
 ```bash
-# Installer les dépendances
+# Install dependencies
 pip install -r requirements.txt
 
-# Lancer l'entraînement
+# Run training
 python train_model.py
 ```
 
-### 2. Construction Docker
-Packager l'API
+### 2. Docker Build
+Package the API.
 
 ```bash
 docker build -t sentiment-api:latest .
 
-# (Si utilisation de Minikube) Charger l'image dans le cluster
+# (If using Minikube) Load the image into the cluster
 minikube image load sentiment-api:latest
 ```
 
-### 3. Déploiement (IaC)
-Déployer l'infrastructure sur Kubernetes via Terraform.
+### 3. Deployment (IaC)
+Deploy the infrastructure on Kubernetes via Terraform.
 
 ```bash
 cd terraform
@@ -94,53 +93,40 @@ terraform init
 terraform apply -auto-approve
 ```
 
-### 4. Accès à l'API
-Une fois l'infrastructure déployée, voici 3 façons de tester l'API :
+### 4. Accessing the API
+Once the infrastructure is deployed, here are 3 ways to test the API:
 
-#### Option A : Interface Visuelle
-Récupérez l'URL du service :
+#### Option A: Visual Interface
+Retrieve the service URL:
 ```bash
 minikube service sentiment-api-service --url
 ```
 
-Ouvrez cette URL dans votre navigateur en ajoutant /docs à la fin. 
-Vous pourrez tester les endpoints directement via l'interface Swagger UI.
+Open this URL in your browser and add /docs to the end. 
+You can test the endpoints directly via the Swagger UI interface.
 
-#### Option B : Tests Automatisés (Bruno)
-Le projet contient une collection de tests API prête à l'emploi.
+#### Option B: Automated Tests (Bruno)
+The project contains a ready-to-use API test collection.
 
-Ouvrez l'application Bruno.
-- Cliquez sur Open Collection.
-- Sélectionnez le dossier sentiment api situé à la racine de ce projet.
-- Lancez la requête Predict Sentiment (N'oubliez pas de mettre à jour l'URL avec celle de votre Minikube).
+Open the **Bruno** application.
+- Click on Open Collection.
+- Select the sentiment api folder located at the root of this project.
+- Run the Predict Sentiment request (Don't forget to update the URL with your Minikube URL).
 
 ### Option C : Terminal (CURL)
-Vous pouvez tester directement depuis votre terminal :
+You can test directly from your terminal:
 
 ```bash
 curl -X 'POST' \
-  'http://URL_MINIKUBE:PORT/predict' \
+  'http://MINIKUBE_URL:PORT/predict' \
   -H 'Content-Type: application/json' \
   -d '{
   "text": "The deployment pipeline is robust and efficient."
 }'
 ```
 
-## Structure du Projet
-
-```bash
-.
-├── dataset.csv            # Données brutes
-├── train_model.py         # Pipeline ML
-├── sentiment_model.pkl    # Modèle généré
-├── main.py                # API FastAPI
-├── Dockerfile             # Configuration Docker
-├── terraform/             # Scripts de déploiement Kubernetes
-└── sentiment api/         # Tests Bruno
-```
-
-## Nettoyage
-Pour supprimer les ressources créées :
+## Cleanup
+To remove the created resources:
 
 ```bash
 cd terraform && terraform destroy
