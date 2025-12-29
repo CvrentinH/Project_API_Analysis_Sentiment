@@ -3,12 +3,8 @@ from pydantic import BaseModel
 import joblib
 import numpy as np
 
-try : 
-    model = joblib.load("sentiment_model.pkl")
-    print("Modèle chargé")
-except FileNotFoundError :
-    print("Modèle introuvable")
-    model = None
+model = joblib.load("sentiment_model.pkl")
+print("Modèle chargé")
 
 app = FastAPI()
 
@@ -22,7 +18,7 @@ def read_root():
 @app.post("/predict/")
 def predict_sentiment(request: sentimentRequest):
     if model is None:
-        return {"erreur": "Aucun modèle disponible"}
+        return {"error": "No model available"}
     prediction = model.predict([request.text])
     sentiment_label = prediction[0]
     probabilities = model.predict_proba([request.text])
