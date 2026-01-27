@@ -113,16 +113,6 @@ Open the **Bruno** application.
 - Select the sentiment api folder located at the root of this project.
 - Run the Predict Sentiment request (Don't forget to update the URL with your Minikube URL).
 
-### Option C : Terminal (CURL)
-You can test directly from your terminal:
-
-```bash
-curl -X 'POST' \
-  'http://MINIKUBE_URL:PORT/predict' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "text": "The deployment pipeline is robust and efficient."
-}'
 ```
 
 ## Cleanup
