@@ -48,11 +48,11 @@ This is explained by **Dataset Bias**: Since the training dataset is small, the 
 
 ### Prerequisites
 
-* Python 3.11+
+* Python
 * Docker Desktop / Minikube
 * Terraform
 * Git
-* Make
+* (Make)
 
 ### Option 1: Quick Start (Via Makefile)
 The entire pipeline (Installation, Training, Docker Build, Minikube, Terraform) is automated.
