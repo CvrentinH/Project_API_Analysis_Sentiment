@@ -96,7 +96,7 @@ terraform apply -auto-approve
 ### 4. Accessing the API
 Once the infrastructure is deployed, here are 3 ways to test the API:
 
-#### Option A: Visual Interface
+#### **Option A: Visual Interface**
 Retrieve the service URL:
 ```bash
 minikube service sentiment-api-service --url
@@ -105,7 +105,7 @@ minikube service sentiment-api-service --url
 Open this URL in your browser and add /docs to the end. 
 You can test the endpoints directly via the Swagger UI interface.
 
-#### Option B: Automated Tests (Bruno)
+#### **Option B: Automated Tests (Bruno)**
 The project contains a ready-to-use API test collection.
 
 Open the **Bruno** application.
@@ -113,7 +113,6 @@ Open the **Bruno** application.
 - Select the sentiment api folder located at the root of this project.
 - Run the Predict Sentiment request (Don't forget to update the URL with your Minikube URL).
 
-```
 
 ## Cleanup
 To remove the created resources:
