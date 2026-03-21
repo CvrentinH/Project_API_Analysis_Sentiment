@@ -32,7 +32,7 @@ The project follows a strict separation between training and usage:
 
 To understand how the model makes decisions, we extracted the coefficients from the Logistic Regression. The chart below shows the words that most influence the decision toward "Positive" (Green) or "Negative" (Red).
 
-![Explicabilité du modèle](feature_importance.png)
+![Feature_importance](feature_importance.png)
 
 ### Why do neutral words seem "polarized"?
 You may notice that some seemingly neutral words appear strongly colored.

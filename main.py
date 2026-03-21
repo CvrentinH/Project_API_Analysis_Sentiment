@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 
 model = joblib.load("sentiment_model.pkl")
-print("Modèle chargé")
+print("Model loaded")
 
 app = FastAPI()
 
@@ -13,7 +13,7 @@ class sentimentRequest(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"Message": "Sentiment Analysis API"}
+    return {"Message": "Sentiment Analysis API (/predict for POST)"}
 
 @app.post("/predict/")
 def predict_sentiment(request: sentimentRequest):
